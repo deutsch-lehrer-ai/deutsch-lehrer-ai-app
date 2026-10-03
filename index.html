@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch Lehrer AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7ff, #e8efff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1f2937;
+    }
+
+    .app {
+      width: 92%;
+      max-width: 430px;
+      background: white;
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 15px;
+      border-radius: 22px;
+      background: #1f4fd8;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin: 8px 0 25px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      font-size: 16px;
+      background: white;
+    }
+
+    .levels {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+    }
+
+    .level {
+      padding: 11px 3px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .level.active {
+      background: #1f4fd8;
+      color: white;
+      border-color: #1f4fd8;
+    }
+
+    .start {
+      width: 100%;
+      margin-top: 25px;
+      padding: 17px;
+      border: none;
+      border-radius: 16px;
+      background: #1f4fd8;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .start:hover {
+      opacity: 0.9;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="logo">AI</div>
+
+    <h1>Deutsch Lehrer AI</h1>
+
+    <div class="subtitle">
+      Dein persönlicher Deutschlehrer
+    </div>
+
+    <label>Dein Niveau</label>
+
+    <div class="levels">
+      <div class="level">A1</div>
+      <div class="level">A2</div>
+      <div class="level active">B1</div>
+      <div class="level">B2</div>
+      <div class="level">C1</div>
+    </div>
+
+    <label>Thema</label>
+
+    <select>
+      <option>Alltag</option>
+      <option>Arbeit</option>
+      <option>Reisen</option>
+      <option>Freies Gespräch</option>
+      <option>Prüfungsvorbereitung</option>
+    </select>
+
+    <label>Erklärungssprache</label>
+
+    <select>
+      <option>Azərbaycan</option>
+      <option>Русский</option>
+      <option>English</option>
+      <option>Nur Deutsch</option>
+    </select>
+
+    <button class="start">
+      🎤 Sprechen starten
+    </button>
+
+    <div class="note">
+      Der Lehrer korrigiert deine Fehler sofort.
+    </div>
+
+  </div>
+
+  <script>
+    const levels = document.querySelectorAll(".level");
+
+    levels.forEach(level => {
+      level.addEventListener("click", () => {
+        levels.forEach(x => x.classList.remove("active"));
+        level.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
